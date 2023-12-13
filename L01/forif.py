@@ -1,6 +1,16 @@
+line = ""
+for i in range(5):
+    line = ""
+    for j in range(5):
+        line += "*"
+    print(line)
+
+# a='qwerty'
+# for i in a:
+#     print(i)
 
 
-# range (1,10,2)
+# # range (1,10,2)
 
 # username = input("Введите имя: ")
 # if username == "Маша":
