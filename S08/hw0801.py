@@ -67,19 +67,22 @@ def write_file(file_name):
         f_writer.writeheader()
         f_writer.writerows(res)
 
+
 def copy_line(input_file, outfile):
-    input_array  = read_file (input_file)
-    input_array_len = len (input_array)
-    row = int(input(f'Введите номер строки для копирования (от 1 до {input_array_len}): '))
+    input_array = read_file(input_file)
+    input_array_len = len(input_array)
+    row = int(
+        input(f"Введите номер строки для копирования (от 1 до {input_array_len}): ")
+    )
     if row < 1 or row > input_array_len:
-        print('Введите корректное значение.')
+        print("Введите корректное значение.")
     else:
-        print(input_array[row-1])  
+        print(input_array[row - 1])
         with open(outfile, "w", encoding="utf-8", newline="") as data:
             f_writer = DictWriter(data, fieldnames=["Имя", "Фамилия", "Телефон"])
             f_writer.writeheader()
-            f_writer.writerow(input_array[row-1])
-            
+            f_writer.writerow(input_array[row - 1])
+
 
 file_name = "phone.csv"
 file_name_copy = "phone_copy.csv"
@@ -100,9 +103,7 @@ def main():
                 continue
             print(*read_file(file_name))
         elif command == "c":
-            #create_file(file_name_copy)
             copy_line(file_name, file_name_copy)
-            
 
 
 main()
