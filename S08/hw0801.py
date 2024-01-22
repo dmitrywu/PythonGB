@@ -67,6 +67,7 @@ def write_file(file_name):
         f_writer.writeheader()
         f_writer.writerows(res)
 
+
 def copy_line(input_file, outfile):
     input_array = read_file(input_file)
     input_array_len = len(input_array)
@@ -83,9 +84,9 @@ def copy_line(input_file, outfile):
             f_writer.writerow(input_array[row - 1])
 
 
-
 file_name = "phone.csv"
 file_name_copy = "phone_copy.csv"
+
 
 def main():
     while True:
